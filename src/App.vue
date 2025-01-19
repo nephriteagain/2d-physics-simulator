@@ -6,12 +6,12 @@ document.title = "2d physics engine"
 const timeElapsed = ref(0)
 
 onMounted(() => {
-    function gravity(t:number) {
+    function time(t:number) {
         timeElapsed.value = t
-        requestAnimationFrame(gravity)
+        requestAnimationFrame(time)
     }
 
-    requestAnimationFrame(gravity)
+    requestAnimationFrame(time)
 })
 
 

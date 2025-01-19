@@ -5,7 +5,6 @@ const timeSpawned = ref(timeElapsed);
 const previousTimestamp = ref(timeElapsed);
 const isFalling = ref(true);
 const ACCELERATION = 49; // pixels per second squared
-const now = Date.now()
 
 const calculatedSize = computed(() => {
     // 5 is a multiplier since i am representing 100m into 500px
@@ -41,11 +40,8 @@ onMounted(() => {
         requestAnimationFrame(fall);
     }
 
-    // Delay the fall by 3 seconds
-    // setTimeout(() => {
         timeSpawned.value = performance.now(); // Reset spawn time to the current time
         requestAnimationFrame(fall);
-    // }, 3_000);
 });
 </script>
 
